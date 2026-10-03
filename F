@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Kirby Bot — Privacy Policy & Terms</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      color: #fff;
+      background:
+        radial-gradient(circle at top, #5865f2 0%, transparent 30%),
+        linear-gradient(135deg, #080812, #111323, #080812);
+      overflow-x: hidden;
+    }
+
+    /* Background glow */
+    body::before {
+      content: "";
+      position: fixed;
+      width: 450px;
+      height: 450px;
+      background: #5865f2;
+      filter: blur(150px);
+      opacity: .12;
+      top: -150px;
+      right: -100px;
+      pointer-events: none;
+    }
+
+    /* Navbar */
+    .navbar {
+      width: 100%;
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      background: rgba(8,8,18,.65);
+      backdrop-filter: blur(18px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 21px;
+      font-weight: 800;
+    }
+
+    .logo {
+      width: 43px;
+      height: 43px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #5865f2, #7c83ff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 0 25px rgba(88,101,242,.45);
+      font-size: 22px;
+    }
+
+    .nav-support {
+      text-decoration: none;
+      color: white;
+      padding: 10px 17px;
+      border-radius: 10px;
+      background: rgba(88,101,242,.16);
+      border: 1px solid rgba(88,101,242,.4);
+      transition: .3s;
+      font-size: 14px;
+    }
+
+    .nav-support:hover {
+      background: #5865f2;
+      transform: translateY(-2px);
+    }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 75px 20px 45px;
+    }
+
+    .hero-logo {
+      width: 85px;
+      height: 85px;
+      margin: auto;
+      border-radius: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #5865f2, #7280ff);
+      font-size: 43px;
+      box-shadow:
+        0 0 30px rgba(88,101,242,.5),
+        0 0 90px rgba(88,101,242,.15);
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .hero h1 {
+      margin-top: 25px;
+      font-size: clamp(35px, 7vw, 58px);
+      letter-spacing: -2px;
+    }
+
+    .hero h1 span {
+      color: #7280ff;
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: 15px auto 0;
+      color: #a9adc4;
+      line-height: 1.7;
+    }
+
+    /* Buttons */
+    .buttons {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      color: #fff;
+      padding: 13px 21px;
+      border-radius: 12px;
+      font-weight: 700;
+      transition: .3s;
+    }
+
+    .btn-discord {
+      background: #5865f2;
+      box-shadow: 0 8px 25px rgba(88,101,242,.25);
+    }
+
+    .btn-discord:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 35px rgba(88,101,242,.45);
+    }
+
+    .btn-policy {
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.1);
+    }
+
+    .btn-policy:hover {
+      background: rgba(255,255,255,.11);
+    }
+
+    /* Main */
+    .container {
+      width: min(1050px, 92%);
+      margin: 20px auto 70px;
+    }
+
+    .card {
+      background: rgba(18,20,36,.78);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 22px;
+      backdrop-filter: blur(18px);
+      box-shadow: 0 20px 70px rgba(0,0,0,.22);
+    }
+
+    .card h2 {
+      color: #fff;
+      margin-bottom: 18px;
+      font-size: 26px;
+    }
+
+    .card h3 {
+      margin: 22px 0 9px;
+      color: #7280ff;
+      font-size: 18px;
+    }
+
+    .card p,
+    .card li {
+      color: #b5b8ca;
+      line-height: 1.75;
+      font-size: 15px;
+    }
+
+    .card ul {
+      padding-left: 22px;
+    }
+
+    /* Support box */
+    .support {
+      text-align: center;
+      padding: 35px 20px;
+      border-radius: 20px;
+      background: linear-gradient(
+        135deg,
+        rgba(88,101,242,.18),
+        rgba(114,128,255,.05)
+      );
+      border: 1px solid rgba(88,101,242,.25);
+    }
+
+    .support-icon {
+      font-size: 35px;
+      margin-bottom: 12px;
+    }
+
+    .support h2 {
+      margin-bottom: 8px;
+    }
+
+    .support p {
+      color: #aeb1c5;
+      margin-bottom: 20px;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid rgba(255,255,255,.08);
+      padding: 28px 20px;
+      text-align: center;
+      color: #777b91;
+      font-size: 13px;
+    }
+
+    footer a {
+      color: #8d96ff;
+      text-decoration: none;
+      margin: 0 7px;
+    }
+
+    /* Mobile */
+    @media (max-width: 600px) {
+      .navbar {
+        padding: 14px 5%;
+      }
+
+      .nav-support {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 55px;
+      }
+
+      .card {
+        padding: 22px;
+        border-radius: 16px;
+      }
+
+      .hero h1 {
+        font-size: 39px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="brand">
+      <div class="logo">🤖</div>
+      Kirby Bot
+    </div>
+
+    <a
+      class="nav-support"
+      href="https://discord.gg/YOUR-SUPPORT-LINK"
+      target="_blank"
+    >
+      💬 Join Support
+    </a>
+  </nav>
+
+
+  <!-- HERO -->
+  <section class="hero">
+
+    <div class="hero-logo">
+      🤖
+    </div>
+
+    <h1>
+      Kirby <span>Bot</span>
+    </h1>
+
+    <p>
+      Welcome to the official Kirby Bot legal center.
+      Read our Privacy Policy and Terms of Service to understand
+      how Kirby Bot works and how your data is handled.
+    </p>
+
+    <div class="buttons">
+
+      <a
+        class="btn btn-discord"
+        href="https://discord.gg/YOUR-SUPPORT-LINK"
+        target="_blank"
+      >
+        💬 Join Support Discord
+      </a>
+
+      <a
+        class="btn btn-policy"
+        href="#privacy"
+      >
+        🔒 Privacy Policy
+      </a>
+
+      <a
+        class="btn btn-policy"
+        href="#terms"
+      >
+        📜 Terms of Service
+      </a>
+
+    </div>
+  </section>
+
+
+  <!-- CONTENT -->
+  <main class="container">
+
+    <!-- PRIVACY POLICY -->
+    <section class="card" id="privacy">
+
+      <h2>🔒 Privacy Policy</h2>
+
+      <p>
+        This Privacy Policy explains how Kirby Bot may collect, use,
+        and protect information when you use the bot or its services.
+      </p>
+
+      <h3>1. Information We May Collect</h3>
+
+      <p>
+        Kirby Bot may process basic Discord-related information required
+        for its features, such as Discord user IDs, server IDs, channel
+        IDs, usernames, and configuration settings.
+      </p>
+
+      <h3>2. How Information Is Used</h3>
+
+      <ul>
+        <li>To provide and operate Kirby Bot features.</li>
+        <li>To configure moderation and server settings.</li>
+        <li>To improve reliability and performance.</li>
+        <li>To prevent abuse and misuse of the bot.</li>
+      </ul>
+
+      <h3>3. Data Security</h3>
+
+      <p>
+        We take reasonable measures to protect information processed by
+        Kirby Bot. However, no online service can guarantee absolute
+        security.
+      </p>
+
+      <h3>4. Third-Party Services</h3>
+
+      <p>
+        Kirby Bot operates through Discord and may use other third-party
+        services necessary to provide certain features. Their own privacy
+        policies may apply.
+      </p>
+
+      <h3>5. Data Requests</h3>
+
+      <p>
+        If you have questions about your information or want to request
+        assistance regarding stored configuration data, please contact
+        the Kirby Bot support team.
+      </p>
+
+      <h3>6. Contact</h3>
+
+      <p>
+        For privacy-related questions, join our Support Discord and
+        contact the available support team.
+      </p>
+
+    </section>
+
+
+    <!-- TERMS -->
+    <section class="card" id="terms">
+
+      <h2>📜 Terms of Service</h2>
+
+      <p>
+        By using Kirby Bot, you agree to follow these Terms of Service.
+        If you do not agree with these terms, please do not use the bot.
+      </p>
+
+      <h3>1. Use of Kirby Bot</h3>
+
+      <p>
+        Kirby Bot is provided for Discord server management, moderation,
+        utility, entertainment, and other supported features.
+      </p>
+
+      <h3>2. Acceptable Use</h3>
+
+      <ul>
+        <li>Do not use Kirby Bot for illegal activities.</li>
+        <li>Do not intentionally abuse or exploit the bot.</li>
+        <li>Do not attempt to disrupt the bot or its infrastructure.</li>
+        <li>Follow Discord's Terms of Service and Community Guidelines.</li>
+      </ul>
+
+      <h3>3. Availability</h3>
+
+      <p>
+        We may update, modify, temporarily disable, or discontinue
+        features of Kirby Bot at any time.
+      </p>
+
+      <h3>4. Server Administration</h3>
+
+      <p>
+        Server owners and administrators are responsible for configuring
+        Kirby Bot correctly and using its moderation features responsibly.
+      </p>
+
+      <h3>5. Termination</h3>
+
+      <p>
+        Access to Kirby Bot may be restricted or terminated if the bot
+        is abused, exploited, or used in violation of these terms.
+      </p>
+
+      <h3>6. Changes to These Terms</h3>
+
+      <p>
+        These Terms of Service may be updated from time to time.
+        Continued use of Kirby Bot after changes means you accept the
+        updated terms.
+      </p>
+
+      <h3>7. Contact & Support</h3>
+
+      <p>
+        Need help? Join the Kirby Bot Support Discord and contact our
+        support team.
+      </p>
+
+    </section>
+
+
+    <!-- SUPPORT -->
+    <section class="support">
+
+      <div class="support-icon">💬</div>
+
+      <h2>Need Help?</h2>
+
+      <p>
+        Join the Kirby Bot Support Discord for help, updates,
+        questions, and community support.
+      </p>
+
+      <a
+        class="btn btn-discord"
+        href="https://discord.gg/YOUR-SUPPORT-LINK"
+        target="_blank"
+      >
+        🚀 Join Support Discord
+      </a>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    © 2026 Kirby Bot. All rights reserved.
+
+    <br><br>
+
+    <a href="#privacy">Privacy Policy</a>
+    ·
+    <a href="#terms">Terms of Service</a>
+    ·
+    <a
+      href="https://discord.gg/YOUR-SUPPORT-LINK"
+      target="_blank"
+    >
+      Join Support
+    </a>
+
+  </footer>
+
+</body>
+</html>
